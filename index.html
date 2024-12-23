@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cosas que me gustan de Izel</title>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background: linear-gradient(135deg, #ffb6c1, #ff4081);
+            font-family: 'Raleway', sans-serif;
+            color: #fff;
+            padding: 0;
+            margin: 0;
+            overflow-y: scroll;
+            height: 100%;
+            position: relative;
+            text-align: center;
+        }
+
+        h1 {
+            color: #ffffff;
+            font-size: 3em;
+            margin-top: 20px;
+            text-align: center;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+        }
+
+        h2 {
+            font-size: 1.5em;
+            margin-top: 20px;
+            color: #ffffff;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+            margin-top: 30px;
+            position: relative;
+            z-index: 10;
+        }
+
+        li {
+            font-size: 1.5em;
+            margin: 25px 0;
+            color: #9b59b6; /* Cambié el color a morado */
+            transition: all 0.3s ease;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transform: translateX(-100%);
+            animation: slideIn 1s forwards;
+        }
+
+        li:nth-child(even) {
+            animation: slideInRight 1s forwards;
+        }
+
+        li:hover {
+            color: #ff4081;
+            transform: scale(1.1);
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateX(-100%);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(100%);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .heart {
+            font-size: 4em;
+            color: #ff4081;
+            margin-top: 30px;
+            transition: transform 0.3s ease;
+            animation: heartBeat 1s infinite;
+        }
+
+        @keyframes heartBeat {
+            0% {
+                transform: scale(1);
+            }
+            25% {
+                transform: scale(1.1);
+            }
+            50% {
+                transform: scale(1);
+            }
+            75% {
+                transform: scale(1.1);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        #mensaje {
+            font-size: 1.5em;
+            margin-top: 30px;
+            color: #ffeb3b;
+            opacity: 0;
+            animation: slideIn 2s forwards;
+        }
+
+        .button {
+            background-color: #ff4081;
+            color: white;
+            padding: 20px 40px;
+            font-size: 1.5em;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            margin-top: 40px;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            display: inline-block;
+        }
+
+        .button:hover {
+            background-color: #ff1a5e;
+            transform: scale(1.1);
+        }
+
+        footer {
+            margin-top: 50px;
+            font-size: 1.2em;
+            color: #ffeb3b;
+            text-align: center;
+        }
+
+        .specialImage {
+            display: none;
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .specialImage img {
+            width: 60%;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease;
+        }
+
+        .specialImage img:hover {
+            transform: scale(1.05);
+        }
+
+        /* Corazones flotantes */
+        .heart-icon {
+            position: absolute;
+            font-size: 2em;
+            color: #ff4081;
+            animation: floatingHeart 3s infinite;
+        }
+
+        @keyframes floatingHeart {
+            0% {
+                top: 100%;
+                left: 50%;
+            }
+            25% {
+                top: 70%;
+                left: 60%;
+            }
+            50% {
+                top: 40%;
+                left: 30%;
+            }
+            75% {
+                top: 60%;
+                left: 80%;
+            }
+            100% {
+                top: 100%;
+                left: 50%;
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+    <h1>Las cosas que me gustan de Izel</h1>
+
+    <ul>
+        <li>1. Lo hermosa que es</li>
+        <li>2. Que es la mejor artista</li>
+        <li>3. Lo inteligente que es</li>
+        <li>4. Su hermosa voz</li>
+        <li>5. Su personalidad única</li>
+        <li>6. El amor a lo que le apasiona</li>
+        <li>7. El amor a los animales</li>
+        <li>8. Lo disciplinada que es</li>
+        <li>9. Lo rico que cocina</li>
+        <li>10. Todo lo que es esta niña me encanta</li>
+    </ul>
+
+    <div id="mensaje">
+        <p>Te amo mucho, Izelita! TQM</p>
+        <div class="heart">❤</div>
+    </div>
+
+    <button class="button" id="showMessageBtn">Haz clic para ver una imagen de Snoopy y un mensaje especial</button>
+
+    <!-- Imagen especial que aparece al hacer clic -->
+    <div class="specialImage" id="specialImage">
+        <img src="Snoppy.jpg" alt="Snoopy de amor">
+    </div>
+
+    <!-- Botón para abrir el enlace de YouTube -->
+    <button class="button" onclick="window.open('https://youtu.be/v8oqbWrP1QY?si=4qojepkniferNwua', '_blank')">Escucha la canción especial para Izel</button>
+
+    <footer>
+        <p>Hecho con mucho amor para Izel ❤</p>
+    </footer>
+
+    <!-- Corazones flotantes -->
+    <div class="heart-icon" style="top: 10%; left: 30%;">❤</div>
+    <div class="heart-icon" style="top: 20%; left: 70%;">❤</div>
+    <div class="heart-icon" style="top: 50%; left: 50%;">❤</div>
+
+    <script>
+        // Mostrar imagen especial al hacer clic en el botón
+        document.getElementById('showMessageBtn').addEventListener('click', function() {
+            document.getElementById('specialImage').style.display = 'block'; // Mostrar la imagen especial
+        });
+    </script>
+
+</body>
+</html>
